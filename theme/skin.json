@@ -2,7 +2,7 @@
   "name": "Cyberpunk",
   "author": "Zyared",
   "description": "Acid yellow on black with red and cyan accents, cut corners, a HUD readout, hazard tape, hard glitch effects and a jack-in boot sequence.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "header_image": "assets/logo.svg",
   "splash_image": "assets/logo.svg",
   "tags": ["dark", "neon", "animated"],
@@ -19,6 +19,18 @@
     { "MatchRegexString": ".friendsui-container", "TargetCss": "friends.custom.css" }
   ],
   "Conditions": {
+    "Color scheme": {
+      "default": "Acid yellow",
+      "description": "Main colours of the whole theme. Restart Steam after changing it.",
+      "values": {
+        "Acid yellow": {},
+        "Blood red": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-blood.css" } },
+        "Ice cyan": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-ice.css" } },
+        "Toxic green": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-toxic.css" } },
+        "Neon violet": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-violet.css" } },
+        "Hot pink": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-pink.css" } }
+      }
+    },
     "Boot sequence": {
       "default": "yes",
       "description": "Short jack-in screen when Steam starts.",

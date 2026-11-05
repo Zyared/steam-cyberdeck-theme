@@ -1,0 +1,17 @@
+/* Colour scheme: ice */
+html:root {
+  --cp-black: #05090c;
+  --cp-panel: #0b1318;
+  --cp-panel2: #12202a;
+  --cp-line: #17333d;
+  --cp-y: #00e5ff;
+  --cp-r: #ff2e88;
+  --cp-c: #b388ff;
+  --cp-text: #d8eef2;
+  --cp-dim: #7a9aa3;
+  --cp-y-rgb: 0, 229, 255;
+  --cp-r-rgb: 255, 46, 136;
+  --cp-c-rgb: 179, 136, 255;
+  --cp-black-rgb: 5, 9, 12;
+  --cp-panel-rgb: 11, 19, 24;
+}

@@ -38,7 +38,7 @@
         bands.forEach((b, i) => {
           b.style.top = `${Math.random() * 92}%`;
           b.style.height = `${4 + Math.random() * 34}px`;
-          b.style.background = ['rgba(255,0,60,.28)', 'rgba(0,240,255,.24)', 'rgba(252,238,10,.16)'][i];
+          b.style.background = ['rgba(var(--cp-r-rgb),.28)', 'rgba(var(--cp-c-rgb),.24)', 'rgba(var(--cp-y-rgb),.16)'][i];
         });
         tear.classList.remove('on');
         void tear.offsetWidth;

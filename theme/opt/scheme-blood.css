@@ -1,0 +1,17 @@
+/* Colour scheme: blood */
+html:root {
+  --cp-black: #0a0506;
+  --cp-panel: #150a0c;
+  --cp-panel2: #221013;
+  --cp-line: #3d1a1e;
+  --cp-y: #ff2a3c;
+  --cp-r: #ffb000;
+  --cp-c: #ff7a59;
+  --cp-text: #f0dcd8;
+  --cp-dim: #a37e7a;
+  --cp-y-rgb: 255, 42, 60;
+  --cp-r-rgb: 255, 176, 0;
+  --cp-c-rgb: 255, 122, 89;
+  --cp-black-rgb: 10, 5, 6;
+  --cp-panel-rgb: 21, 10, 12;
+}

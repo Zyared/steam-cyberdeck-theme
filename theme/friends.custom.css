@@ -9,6 +9,11 @@
   --cp-c: #00f0ff;
   --cp-text: #e8e5d0;
   --cp-dim: #918e74;
+  --cp-y-rgb: 252, 238, 10;
+  --cp-r-rgb: 255, 0, 60;
+  --cp-c-rgb: 0, 240, 255;
+  --cp-black-rgb: 8, 8, 10;
+  --cp-panel-rgb: 16, 16, 20;
   --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
   --cp-cut-s: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
 }
@@ -92,7 +97,7 @@ img.avatar { border-color: var(--cp-line) !important; }
 .groupCount { color: var(--cp-dim) !important; }
 .onlineFriends, .offlineFriends, .gameGroup, .ChatRoomList { background-image: none !important; }
 .friend { transition: box-shadow .1s; }
-.friend:hover { background: rgba(252, 238, 10, .08) !important; box-shadow: inset 3px 0 0 var(--cp-y); }
+.friend:hover { background: rgba(var(--cp-y-rgb), .08) !important; box-shadow: inset 3px 0 0 var(--cp-y); }
 .friend:hover .playerName { animation: cp-glitch .28s steps(1) 1; }
 .online .playerName { color: var(--cp-y) !important; }
 .ingame .playerName { color: var(--cp-r) !important; }
@@ -107,7 +112,7 @@ img.avatar { border-color: var(--cp-line) !important; }
   background-image: none !important;
   border: 1px solid var(--cp-y) !important;
   border-radius: 0 !important;
-  box-shadow: 0 0 14px rgba(252, 238, 10, .2) !important;
+  box-shadow: 0 0 14px rgba(var(--cp-y-rgb), .2) !important;
 }
 .contextMenuContents, .contextMenuSectionContent { background: transparent !important; background-image: none !important; }
 .contextMenuItem {
@@ -142,7 +147,7 @@ img.avatar { border-color: var(--cp-line) !important; }
 
 /* chat */
 .ChatTab { background: transparent !important; border-radius: 0 !important; }
-.ChatTab:hover { background: rgba(252, 238, 10, .08) !important; }
+.ChatTab:hover { background: rgba(var(--cp-y-rgb), .08) !important; }
 .ChatTab.Active { background: var(--cp-panel2) !important; box-shadow: inset 0 -3px 0 var(--cp-y); }
 .chatDialogs, .chatWindow, .chatHeader, .chatHistoryScroll {
   background: var(--cp-black) !important;

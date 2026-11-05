@@ -1,9 +1,19 @@
 /* Cyberpunk theme: sign-in splash shown while Steam starts */
 :root {
+  --cp-black: #08080a;
+  --cp-panel: #101014;
+  --cp-panel2: #1a1a20;
+  --cp-line: #33311c;
   --cp-y: #fcee0a;
   --cp-r: #ff003c;
   --cp-c: #00f0ff;
-  --cp-line: #33311c;
+  --cp-text: #e8e5d0;
+  --cp-dim: #918e74;
+  --cp-y-rgb: 252, 238, 10;
+  --cp-r-rgb: 255, 0, 60;
+  --cp-c-rgb: 0, 240, 255;
+  --cp-black-rgb: 8, 8, 10;
+  --cp-panel-rgb: 16, 16, 20;
   --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
 }
 @keyframes cp-tape { to { background-position: 45.25px 0; } }
@@ -14,11 +24,11 @@
   96% { transform: translateX(-1px); text-shadow: 2px 0 var(--cp-c); }
 }
 
-html, body { background: #08080a !important; }
+html, body { background: var(--cp-black) !important; }
 .title-area-highlight { display: none !important; }
 .title-area-icon:hover { background: var(--cp-r) !important; }
 
-.LoginStaticBackground { background: #08080a !important; background-image: none !important; }
+.LoginStaticBackground { background: var(--cp-black) !important; background-image: none !important; }
 /* the blurred game covers stay, drained of colour so the yellow carries the screen */
 .LoginAnimatedBackground { filter: grayscale(1) brightness(.5); }
 
@@ -29,7 +39,7 @@ body::before {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(135deg, rgba(252, 238, 10, .1), rgba(8, 8, 10, .35) 55%, rgba(255, 0, 60, .1));
+  background: linear-gradient(135deg, rgba(var(--cp-y-rgb), .1), rgba(var(--cp-black-rgb), .35) 55%, rgba(var(--cp-r-rgb), .1));
   box-shadow: inset 0 2px 0 var(--cp-y);
 }
 body::after {
@@ -46,7 +56,7 @@ body::after {
 .Login { position: relative; z-index: 3; }
 
 /* spinner: the ring is part of the image, so it is recoloured with a hue shift; the white logo is unaffected */
-.SpinnerLoaderContainer img { filter: hue-rotate(213deg) saturate(3) drop-shadow(0 0 10px rgba(252, 238, 10, .45)); }
+.SpinnerLoaderContainer img { filter: hue-rotate(213deg) saturate(3) drop-shadow(0 0 10px rgba(var(--cp-y-rgb), .45)); }
 
 .LoginStatus {
   font-family: var(--cp-font) !important;

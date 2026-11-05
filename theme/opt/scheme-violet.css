@@ -1,0 +1,17 @@
+/* Colour scheme: violet */
+html:root {
+  --cp-black: #08060c;
+  --cp-panel: #110c1a;
+  --cp-panel2: #1b1428;
+  --cp-line: #2e2440;
+  --cp-y: #c77dff;
+  --cp-r: #ff2e88;
+  --cp-c: #4cc9f0;
+  --cp-text: #e8e0f0;
+  --cp-dim: #8f84a3;
+  --cp-y-rgb: 199, 125, 255;
+  --cp-r-rgb: 255, 46, 136;
+  --cp-c-rgb: 76, 201, 240;
+  --cp-black-rgb: 8, 6, 12;
+  --cp-panel-rgb: 17, 12, 26;
+}

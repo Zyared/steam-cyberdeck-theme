@@ -9,6 +9,11 @@
   --cp-c: #00f0ff;
   --cp-text: #e8e5d0;
   --cp-dim: #918e74;
+  --cp-y-rgb: 252, 238, 10;
+  --cp-r-rgb: 255, 0, 60;
+  --cp-c-rgb: 0, 240, 255;
+  --cp-black-rgb: 8, 8, 10;
+  --cp-panel-rgb: 16, 16, 20;
   --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
   --cp-cut: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
   --cp-cut-s: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
@@ -23,7 +28,7 @@
   80% { transform: translateX(1px) skewX(-3deg); text-shadow: -3px 0 var(--cp-r); }
 }
 @keyframes cp-split {
-  0%, 100% { filter: drop-shadow(0 0 7px rgba(252, 238, 10, .55)); }
+  0%, 100% { filter: drop-shadow(0 0 7px rgba(var(--cp-y-rgb), .55)); }
   25% { filter: drop-shadow(-5px 0 0 var(--cp-r)) drop-shadow(5px 0 0 var(--cp-c)); }
   50% { filter: drop-shadow(5px 0 0 var(--cp-r)) drop-shadow(-5px 0 0 var(--cp-c)); }
   75% { filter: drop-shadow(-2px 0 0 var(--cp-r)) drop-shadow(2px 0 0 var(--cp-c)); }
@@ -94,7 +99,7 @@ body { color: var(--cp-text); }
 }
 .AccountMenu, .AccountMenu * { color: var(--cp-y) !important; }
 .AccountMenu path { fill: var(--cp-y) !important; }
-.AccountMenu:hover, .NotificationsButton:hover { border-color: var(--cp-y); background: rgba(252, 238, 10, .08) !important; }
+.AccountMenu:hover, .NotificationsButton:hover { border-color: var(--cp-y); background: rgba(var(--cp-y-rgb), .08) !important; }
 .AnnouncementsButton { background: var(--cp-r) !important; border-radius: 0 !important; clip-path: var(--cp-cut-s); }
 .WalletBalance { color: var(--cp-y) !important; }
 .title-area-highlight { display: none !important; }
@@ -143,7 +148,7 @@ body { color: var(--cp-text); }
 .Library .HomeBox .Bar.Selected { background: var(--cp-y) !important; }
 .Library .HomeBox .Bar.Selected .Label { color: #000 !important; }
 .Library .HomeBox .Bar.Selected svg, .Library .HomeBox .Bar.Selected svg * { fill: rgba(0, 0, 0, .12) !important; }
-.Library .HomeBox .Bar:not(.Selected):hover { background: rgba(252, 238, 10, .16) !important; }
+.Library .HomeBox .Bar:not(.Selected):hover { background: rgba(var(--cp-y-rgb), .16) !important; }
 .Library .MenuHeader, .Library .SearchInput,
 .Library .Bar + .Container { background: var(--cp-panel2) !important; border-radius: 0 !important; }
 .Library .ViewName { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .08em; }
@@ -153,7 +158,7 @@ body { color: var(--cp-text); }
 .Library .Container.Focusable:has(.SectionName) { background-image: none !important; background-color: transparent !important; }
 .Library .Container.Installed .Draggable { transition: box-shadow .1s, padding-left .1s; }
 .Library .Container.Installed:hover .Draggable {
-  background: rgba(252, 238, 10, .1) !important;
+  background: rgba(var(--cp-y-rgb), .1) !important;
   box-shadow: inset 3px 0 0 var(--cp-y);
 }
 .Library .Container.Installed.Selected { background: var(--cp-y) !important; box-shadow: inset 4px 0 0 var(--cp-r); }
@@ -166,7 +171,7 @@ body { color: var(--cp-text); }
 /* ---------- library content ---------- */
 .Library .MainPanel > div {
   background-color: var(--cp-black) !important;
-  background-image: repeating-linear-gradient(135deg, rgba(252, 238, 10, .018) 0 1px, transparent 1px 22px) !important;
+  background-image: repeating-linear-gradient(135deg, rgba(var(--cp-y-rgb), .018) 0 1px, transparent 1px 22px) !important;
 }
 .AppDetailsMain > .Container, .LibraryHome, .UpdatesContainer { background: transparent !important; background-image: none !important; }
 .ShowcaseHeader, .UpdatesContainer .Name {
@@ -196,7 +201,7 @@ body { color: var(--cp-text); }
 .PortraitImage, .LandscapeImage { border-radius: 0 !important; clip-path: var(--cp-cut); }
 .LibraryItemBox:hover, .Capsule:hover, .RecentGame:hover {
   animation: cp-split .36s steps(1) 1;
-  filter: drop-shadow(0 0 7px rgba(252, 238, 10, .55));
+  filter: drop-shadow(0 0 7px rgba(var(--cp-y-rgb), .55));
   z-index: 3;
 }
 .AppPortraitBanner { background: var(--cp-y) !important; color: #000 !important; }
@@ -205,7 +210,7 @@ body { color: var(--cp-text); }
 /* ---------- game page ---------- */
 .Body.ScrollContainer.Glassy { background: transparent !important; background-image: none !important; }
 .PlayBar.Glassy, .Container.InPage {
-  background: rgba(8, 8, 10, .94) !important;
+  background: rgba(var(--cp-black-rgb), .94) !important;
   background-image: none !important;
   border-top: 2px solid var(--cp-y);
   border-bottom: 1px solid var(--cp-line);
@@ -253,10 +258,10 @@ body { color: var(--cp-text); }
 .RightControls button, .RightControls > div > div { border-radius: 0 !important; }
 
 /* progress bars (achievements) */
-._1FnTqlsi2_-TJf1d5apoS6, ._3Rm36_oeAhvIg6ZYP9l1Jj { background: var(--cp-y) !important; box-shadow: 0 0 8px rgba(252, 238, 10, .6); }
+._1FnTqlsi2_-TJf1d5apoS6, ._3Rm36_oeAhvIg6ZYP9l1Jj { background: var(--cp-y) !important; box-shadow: 0 0 8px rgba(var(--cp-y-rgb), .6); }
 
 .AppDetailsSection, .SectionContainer { border-radius: 0 !important; }
-.AppDetailsSection { background: rgba(16, 16, 20, .82) !important; background-image: none !important; border: 1px solid var(--cp-line); }
+.AppDetailsSection { background: rgba(var(--cp-panel-rgb), .82) !important; background-image: none !important; border: 1px solid var(--cp-line); }
 .AppDetailsSection > .Panel { background: transparent !important; background-image: none !important; }
 .SectionHeader {
   font-family: var(--cp-font);
@@ -359,11 +364,11 @@ html.MillenniumWindow_ContextMenu body::after {
   font: 400 19px var(--cp-font);
   letter-spacing: .1em;
   color: var(--cp-y);
-  text-shadow: 0 0 10px rgba(252, 238, 10, .5);
+  text-shadow: 0 0 10px rgba(var(--cp-y-rgb), .5);
   transform: skewX(-10deg);
   animation: cp-flicker 8s steps(1) infinite;
 }
-#cp-logo b { color: var(--cp-r); font-weight: 400; text-shadow: 0 0 10px rgba(255, 0, 60, .6); }
+#cp-logo b { color: var(--cp-r); font-weight: 400; text-shadow: 0 0 10px rgba(var(--cp-r-rgb), .6); }
 #cp-hud {
   left: 190px; bottom: 14px;
   z-index: 99985;

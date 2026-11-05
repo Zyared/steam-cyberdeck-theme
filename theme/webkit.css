@@ -1,53 +1,69 @@
 /* Cyberpunk theme: store and community pages (colours only, page layout untouched).
    Short hashed classes below come from the current store build and may change with Steam updates. */
+:root {
+  --cp-black: #08080a;
+  --cp-panel: #101014;
+  --cp-panel2: #1a1a20;
+  --cp-line: #33311c;
+  --cp-y: #fcee0a;
+  --cp-r: #ff003c;
+  --cp-c: #00f0ff;
+  --cp-text: #e8e5d0;
+  --cp-dim: #918e74;
+  --cp-y-rgb: 252, 238, 10;
+  --cp-r-rgb: 255, 0, 60;
+  --cp-c-rgb: 0, 240, 255;
+  --cp-black-rgb: 8, 8, 10;
+  --cp-panel-rgb: 16, 16, 20;
+}
 html, body {
-  background: #08080a !important;
+  background: var(--cp-black) !important;
   background-image: none !important;
 }
-::selection { background: #fcee0a; color: #000; }
-::-webkit-scrollbar { width: 10px; height: 10px; background: #08080a; }
-::-webkit-scrollbar-thumb { background: #33311c; }
-::-webkit-scrollbar-thumb:hover { background: #fcee0a; }
-::-webkit-scrollbar-corner { background: #08080a; }
+::selection { background: var(--cp-y); color: #000; }
+::-webkit-scrollbar { width: 10px; height: 10px; background: var(--cp-black); }
+::-webkit-scrollbar-thumb { background: var(--cp-line); }
+::-webkit-scrollbar-thumb:hover { background: var(--cp-y); }
+::-webkit-scrollbar-corner { background: var(--cp-black); }
 
 .page_background, .responsive_page_template_content, .page_content_ctn, .home_page_body_ctn {
-  background-color: #08080a !important;
+  background-color: var(--cp-black) !important;
 }
 
 /* store navigation */
 .XLbP8xOkCYw- {
-  background: #101014 !important;
+  background: var(--cp-panel) !important;
   background-image: none !important;
-  border-bottom: 2px solid #fcee0a;
+  border-bottom: 2px solid var(--cp-y);
 }
-.A42lZ-U1dhI- { background: #fcee0a !important; color: #000 !important; border-radius: 0 !important; }
+.A42lZ-U1dhI- { background: var(--cp-y) !important; color: #000 !important; border-radius: 0 !important; }
 .A42lZ-U1dhI- svg, .A42lZ-U1dhI- path { fill: #000 !important; }
 
 /* panels and capsules */
 .maxz19gKOQc-, .carousel__slider, .deep_dive_key_tags {
   background-image: none !important;
-  background-color: #101014 !important;
+  background-color: var(--cp-panel) !important;
 }
-.jxYpM-g5fRs- { background: #fcee0a !important; color: #000 !important; }
-.rsPEubiF9HI- { background: #1a1a20 !important; }
-.info, .gradient { background-image: none !important; background-color: rgba(16, 16, 20, .9) !important; }
-.x8jWPgfdVoI- { background: #fcee0a !important; color: #000 !important; }
-.JhiIqI-S0Js- { background: #1a1a20 !important; }
-.gift_card_desktop { background-image: none !important; background-color: #1a1a20 !important; border: 1px solid #33311c; }
-.store_main_capsule { background-color: #101014 !important; }
+.jxYpM-g5fRs- { background: var(--cp-y) !important; color: #000 !important; }
+.rsPEubiF9HI- { background: var(--cp-panel2) !important; }
+.info, .gradient { background-image: none !important; background-color: rgba(var(--cp-panel-rgb), .9) !important; }
+.x8jWPgfdVoI- { background: var(--cp-y) !important; color: #000 !important; }
+.JhiIqI-S0Js- { background: var(--cp-panel2) !important; }
+.gift_card_desktop { background-image: none !important; background-color: var(--cp-panel2) !important; border: 1px solid var(--cp-line); }
+.store_main_capsule { background-color: var(--cp-panel) !important; }
 
 /* tabs and lists */
-.home_tab_button.active { border-color: #fcee0a !important; color: #fcee0a !important; }
-.tab_row_item { background: #101014 !important; }
-.tab_row_item.focus, .tab_preview.focus { background: #1a1a20 !important; box-shadow: inset 3px 0 0 #fcee0a; }
-.tags span, .tags a, .deep_dive_tag { background: #1a1a20 !important; color: #e8e5d0 !important; border-radius: 0 !important; }
-.positive { color: #00f0ff !important; }
-.ds_flag.ds_wishlist_flag { background: #ff003c !important; }
-.LoadingThrobber .Bar { background: #fcee0a !important; }
+.home_tab_button.active { border-color: var(--cp-y) !important; color: var(--cp-y) !important; }
+.tab_row_item { background: var(--cp-panel) !important; }
+.tab_row_item.focus, .tab_preview.focus { background: var(--cp-panel2) !important; box-shadow: inset 3px 0 0 var(--cp-y); }
+.tags span, .tags a, .deep_dive_tag { background: var(--cp-panel2) !important; color: var(--cp-text) !important; border-radius: 0 !important; }
+.positive { color: var(--cp-c) !important; }
+.ds_flag.ds_wishlist_flag { background: var(--cp-r) !important; }
+.LoadingThrobber .Bar { background: var(--cp-y) !important; }
 
 /* buttons and prices */
 .btn_green_steamui, .btn_green_white_innerfade, .btn_blue_steamui, .btn_blue_white_innerfade {
-  background: #fcee0a !important;
+  background: var(--cp-y) !important;
   border-radius: 0 !important;
 }
 .btn_green_steamui > span, .btn_green_white_innerfade > span,
@@ -56,5 +72,5 @@ html, body {
   color: #000 !important;
   border-radius: 0 !important;
 }
-.discount_pct, .nw-DtQ670Sc- { background: #ff003c !important; color: #fff !important; }
-.discount_final_price { color: #fcee0a !important; }
+.discount_pct, .nw-DtQ670Sc- { background: var(--cp-r) !important; color: #fff !important; }
+.discount_final_price { color: var(--cp-y) !important; }

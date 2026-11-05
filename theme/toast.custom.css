@@ -1,18 +1,26 @@
 /* Cyberpunk theme: desktop pop-up notifications */
 :root {
+  --cp-black: #08080a;
   --cp-panel: #101014;
+  --cp-panel2: #1a1a20;
   --cp-line: #33311c;
   --cp-y: #fcee0a;
   --cp-r: #ff003c;
+  --cp-c: #00f0ff;
   --cp-text: #e8e5d0;
   --cp-dim: #918e74;
+  --cp-y-rgb: 252, 238, 10;
+  --cp-r-rgb: 255, 0, 60;
+  --cp-c-rgb: 0, 240, 255;
+  --cp-black-rgb: 8, 8, 10;
+  --cp-panel-rgb: 16, 16, 20;
   --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
 }
 @keyframes cp-glitch {
   0%, 100% { transform: none; text-shadow: none; }
-  25% { transform: translateX(-2px) skewX(-6deg); text-shadow: 2px 0 var(--cp-r), -2px 0 #00f0ff; }
-  50% { transform: translateX(2px) skewX(5deg); text-shadow: -2px 0 var(--cp-r), 2px 0 #00f0ff; }
-  75% { transform: translateX(-1px); text-shadow: 2px 0 #00f0ff; }
+  25% { transform: translateX(-2px) skewX(-6deg); text-shadow: 2px 0 var(--cp-r), -2px 0 var(--cp-c); }
+  50% { transform: translateX(2px) skewX(5deg); text-shadow: -2px 0 var(--cp-r), 2px 0 var(--cp-c); }
+  75% { transform: translateX(-1px); text-shadow: 2px 0 var(--cp-c); }
 }
 .DesktopToastTemplate, .StandardTemplateContainer, .StandardTemplate, .ShortTemplate, .StandardTemplateDesktop {
   background: var(--cp-panel) !important;

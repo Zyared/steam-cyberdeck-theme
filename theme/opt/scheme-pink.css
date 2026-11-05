@@ -1,0 +1,17 @@
+/* Colour scheme: pink */
+html:root {
+  --cp-black: #0a0509;
+  --cp-panel: #150a13;
+  --cp-panel2: #22101f;
+  --cp-line: #3d1a36;
+  --cp-y: #ff2bd6;
+  --cp-r: #fcee0a;
+  --cp-c: #00f0ff;
+  --cp-text: #f2dcec;
+  --cp-dim: #a37e99;
+  --cp-y-rgb: 255, 43, 214;
+  --cp-r-rgb: 252, 238, 10;
+  --cp-c-rgb: 0, 240, 255;
+  --cp-black-rgb: 10, 5, 9;
+  --cp-panel-rgb: 21, 10, 19;
+}

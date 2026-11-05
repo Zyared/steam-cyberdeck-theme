@@ -1,0 +1,17 @@
+/* Colour scheme: toxic */
+html:root {
+  --cp-black: #050a05;
+  --cp-panel: #0b140b;
+  --cp-panel2: #142214;
+  --cp-line: #1f3a1c;
+  --cp-y: #39ff14;
+  --cp-r: #ff2e63;
+  --cp-c: #00e5ff;
+  --cp-text: #dcf0d6;
+  --cp-dim: #7f9e78;
+  --cp-y-rgb: 57, 255, 20;
+  --cp-r-rgb: 255, 46, 99;
+  --cp-c-rgb: 0, 229, 255;
+  --cp-black-rgb: 5, 10, 5;
+  --cp-panel-rgb: 11, 20, 11;
+}
