@@ -74,3 +74,172 @@ html, body {
 }
 .discount_pct, .nw-DtQ670Sc- { background: var(--cp-r) !important; color: #fff !important; }
 .discount_final_price { color: var(--cp-y) !important; }
+
+/* ---------- shared: Steam's stock blue and green turn into theme colours ---------- */
+a:hover { color: var(--cp-y) !important; }
+.btnv6_blue_hoverfade, .btn_blue_steamui, .btnv6_lightblue_blue, .btn_medium.btnv6_blue_hoverfade {
+  background: transparent !important;
+  border: 1px solid var(--cp-y) !important;
+  border-radius: 0 !important;
+  color: var(--cp-y) !important;
+}
+.btnv6_blue_hoverfade > span, .btn_blue_steamui > span, .btnv6_lightblue_blue > span { background: transparent !important; color: inherit !important; }
+.btnv6_blue_hoverfade:hover, .btn_blue_steamui:hover, .btnv6_lightblue_blue:hover { background: var(--cp-y) !important; color: #000 !important; }
+.btn_green_white_innerfade, .btn_green_steamui, .btnv6_green_white_innerfade, .btn_green_white_innerfade > span, .btn_green_steamui > span {
+  background: var(--cp-y) !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  color: #000 !important;
+}
+.btnv6_grey_black, .btn_grey_black, .btn_grey_white_innerfade, .btnv6_grey_black > span {
+  background: var(--cp-panel2) !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  color: var(--cp-text) !important;
+}
+input[type="text"], input[type="search"], textarea, select {
+  background-color: var(--cp-panel2) !important;
+  border-color: var(--cp-line) !important;
+  border-radius: 0 !important;
+  color: var(--cp-text) !important;
+}
+._36eiL2GCxdc-, .bV2ueI7Mam8-, #footer { background: var(--cp-black) !important; background-image: none !important; }
+
+/* ---------- market, classic pages ---------- */
+.market_header_bg { background: var(--cp-panel) !important; background-image: none !important; border-bottom: 2px solid var(--cp-y); }
+.market_header_logo { background-image: none !important; }
+.market_tab_well_tabs { background: transparent !important; border-bottom: 1px solid var(--cp-line); }
+.market_tab_well_tab { background: transparent !important; }
+.market_tab_well_tab_contents { background: transparent !important; background-image: none !important; color: var(--cp-dim) !important; border-radius: 0 !important; }
+.market_tab_well_tab.market_tab_well_tab_active .market_tab_well_tab_contents, .market_tab_well_tab_active .market_tab_well_tab_contents { background: var(--cp-y) !important; color: #000 !important; }
+.item_market_action_button, .item_market_action_button_contents { background: var(--cp-y) !important; background-image: none !important; border-radius: 0 !important; color: #000 !important; }
+.market_listing_table_message, .market_listing_table_header, .market_listing_row, .market_search_sidebar_contents {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border-color: var(--cp-line) !important;
+  border-radius: 0 !important;
+}
+.market_listing_row:hover { background: rgba(var(--cp-y-rgb), .08) !important; }
+.market_listing_row_link:hover .market_listing_item_name { color: var(--cp-y) !important; }
+.market_search_advanced_button, .game_button_contents, .game_button {
+  background: var(--cp-panel2) !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  color: var(--cp-text) !important;
+}
+.market_listing_item_img { background: var(--cp-black) !important; border-color: var(--cp-line) !important; }
+.market_commodity_order_block, .market_home_listing_table, .market_content_block, .market_table_value .normal_price { background-color: transparent !important; }
+.market_search_sidebar a, .market_sortable_column a { color: var(--cp-y) !important; }
+
+/* ---------- market search, community pages on the new layout ---------- */
+.Mp6FkxWGdWs-, .MCrEfjh4wsk-, .QIsWaCMFXmc-, .AMZQjRYGsXQ- { background: var(--cp-black) !important; background-image: none !important; }
+._7urhuKLYiUk- { background: var(--cp-panel) !important; background-image: none !important; border-bottom: 2px solid var(--cp-y); }
+.BPTxiJF58z0- { background: var(--cp-panel) !important; border: 1px solid var(--cp-line) !important; border-radius: 0 !important; }
+.BPTxiJF58z0-:hover { border-color: var(--cp-y) !important; }
+.yLiBlmqdKqY- { background-image: none !important; background-color: transparent !important; }
+.AShqAv8lMaM- { background: var(--cp-panel2) !important; border-radius: 0 !important; color: var(--cp-y) !important; }
+.PwGZnF9BFA8- { background: var(--cp-panel2) !important; border-color: var(--cp-line) !important; border-radius: 0 !important; }
+.inqz7Zdx9Xg- { border-radius: 0 !important; }
+.inqz7Zdx9Xg-.ob-nIzzquk8- { background: var(--cp-y) !important; color: #000 !important; }
+.inqz7Zdx9Xg-.vCmvVAHC2BY- { background: var(--cp-panel2) !important; color: var(--cp-text) !important; }
+
+/* ---------- workshop and community hub ---------- */
+.eDVdMzW4Ol4-, ._0rX4KuKZ9dM-, .bt37JYoalu8-, .EnFuoPFRUQw-, .majSrLKbs2Y- {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+}
+.bt37JYoalu8- { border-bottom: 1px solid var(--cp-line); }
+.UNowfeldbNg-, .tYCWuqm2E-A-, .OtherEvents_EventCtn {
+  background: var(--cp-panel2) !important;
+  background-image: none !important;
+  border: 1px solid var(--cp-line) !important;
+  border-radius: 0 !important;
+}
+.UNowfeldbNg-:hover, .tYCWuqm2E-A-:hover, .OtherEvents_EventCtn:hover { border-color: var(--cp-y) !important; }
+._7-YnTYBrWGM- { background-color: var(--cp-black) !important; }
+.TIKXN-ViOCk- { background: var(--cp-panel2) !important; border-radius: 0 !important; }
+.YAnzAmuUUnI- { background: var(--cp-panel2) !important; border-radius: 0 !important; }
+
+/* ---------- store navigation on the new layout ---------- */
+.WCG-2-OYepA- { background: var(--cp-panel) !important; background-image: none !important; border-bottom: 2px solid var(--cp-y); }
+._5fxF1NcznNc-, .Tx-rbJxeMFs- { background: var(--cp-panel2) !important; border-radius: 0 !important; }
+.SdFPqnbn0yI-, .O2jUvAs3OiU- { background: var(--cp-panel) !important; background-image: none !important; border: 1px solid var(--cp-line) !important; }
+.S-0da5Ll-j0-, .JhiIqI-S0Js- { background: transparent !important; border-radius: 0 !important; }
+
+/* ---------- wishlist ---------- */
+.r0DFA3TwTH8- { background: var(--cp-black) !important; background-image: none !important; }
+.PE-3oq-yIvg- {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border: 1px solid var(--cp-line) !important;
+  border-radius: 0 !important;
+}
+.PE-3oq-yIvg-:hover { border-color: var(--cp-y) !important; }
+.QoJP0e0vzFA- { background: var(--cp-panel2) !important; border: 1px solid var(--cp-line) !important; border-radius: 0 !important; color: var(--cp-text) !important; }
+.PzuczM6OUSY- { background: var(--cp-panel2) !important; border: 1px solid var(--cp-line) !important; border-radius: 0 !important; color: var(--cp-text) !important; }
+.U3ndjc3qoW8- { background: var(--cp-panel2) !important; border-radius: 0 !important; color: var(--cp-text) !important; }
+._6QzykeEsckc- { background: transparent !important; }
+.kkZ9PsIE60o- { background: var(--cp-y) !important; background-image: none !important; border-radius: 0 !important; color: #000 !important; }
+.O7UR3Sc3EmM- { background: var(--cp-r) !important; border-radius: 0 !important; color: #fff !important; }
+.z4nYR-MCfbI- { background: var(--cp-panel2) !important; background-image: none !important; border-radius: 0 !important; }
+
+/* ---------- points shop ---------- */
+body.rewards { background: var(--cp-black) !important; }
+.GRnRr6m2Ebs-, .tzrApHrBQDw- { background: var(--cp-black) !important; background-image: none !important; }
+._0EVQlUK3Rxw- { background: var(--cp-panel) !important; border-bottom: 2px solid var(--cp-y); }
+.yu4-si75KQE- { background-image: linear-gradient(transparent, var(--cp-black)) !important; }
+.cL3tfa-JDBE- { background: var(--cp-panel) !important; border: 1px solid var(--cp-line) !important; border-radius: 0 !important; }
+.cL3tfa-JDBE-:hover { border-color: var(--cp-y) !important; }
+.w6UtE24wq8w-, .FkVCjE6GjQg- { background-image: none !important; background-color: transparent !important; border-radius: 0 !important; }
+.SK7vXGSN6OY- { background: var(--cp-panel2) !important; background-image: none !important; border-radius: 0 !important; }
+.AqGaS--D2n0-, ._7JSvJmQTuhw- { background: var(--cp-panel2) !important; background-image: none !important; border-radius: 0 !important; color: var(--cp-text) !important; }
+
+/* ---------- recommendations page: classic class names ---------- */
+[class*="discovery_queue_customize"], [class*="discovery_queue_stat"], [class*="discover_queue_stat"], .discovery_queue_customize_ctn {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border: 1px solid var(--cp-line) !important;
+  border-radius: 0 !important;
+}
+
+/* ---------- second pass: what the colour scan still found ---------- */
+._9zwRENgMM7U-, .page_header_ctn { background-image: none !important; }
+.Psv8L3U3Y44-.gXydmc2EKLk- { background: var(--cp-panel) !important; background-image: none !important; border-radius: 0 !important; }
+.FAoztKwEGgQ-, .supernav_active { color: var(--cp-y) !important; }
+.vph-SVDaiKo-, .IG5AcX8yPdI-, .et-RRc3JMu8- { background: var(--cp-y) !important; border-radius: 0 !important; }
+
+/* market */
+.market_header_bg > div { background: transparent !important; }
+.market_subtitle_text { color: var(--cp-dim) !important; }
+.market_whatsthis, .market_search_sidebar_section_tip_small { color: var(--cp-y) !important; }
+div:has(> .marketBetaNoteText), div:has(> div > .marketBetaNoteText) { background: var(--cp-panel) !important; border: 1px solid var(--cp-line) !important; border-radius: 0 !important; }
+.marketBetaNoteText a { color: var(--cp-y) !important; }
+.modal_frame { border-color: var(--cp-line) !important; }
+.modal_frame > div:empty { background: var(--cp-line) !important; }
+.newmodal .modal_top_bar { background: var(--cp-y) !important; background-image: none !important; }
+
+/* recommendations */
+.faq_question { color: var(--cp-y) !important; }
+.explore_rightcol_box { background: var(--cp-panel) !important; background-image: none !important; border: 1px solid var(--cp-line); border-radius: 0 !important; }
+.dq_item_overlay { background: rgba(var(--cp-black-rgb), .55) !important; }
+
+/* wishlist */
+.Vy3rNuKLunU- { background: var(--cp-panel2) !important; border-color: var(--cp-line) !important; border-radius: 0 !important; }
+._0uIJq8Pia8Q- { color: var(--cp-c) !important; }
+.LrqeL6o22aQ- > span { background: var(--cp-y) !important; background-image: none !important; border-radius: 0 !important; color: #000 !important; }
+.oS2hPC3gY6k- > span { background: var(--cp-panel2) !important; background-image: none !important; border-radius: 0 !important; color: var(--cp-y) !important; }
+.BKhk6CZ5ib0-, .JmLh4Njn6Xg-, .TU39sK7r2pU-, .ZdGB16lKY0I-, .lgaj8WbBqtc-, .MqFcMoKfvAw- { color: var(--cp-dim) !important; }
+
+/* points shop */
+.iC89KZRmD3g- { color: var(--cp-y) !important; }
+._7JSvJmQTuhw- { border-color: var(--cp-y) !important; color: var(--cp-y) !important; }
+._3z-SJMDRMwU-, .T5b2NUonuC8- { background-image: none !important; -webkit-text-fill-color: var(--cp-y) !important; color: var(--cp-y) !important; }
+.y7wLLLq2IME- { background-image: none !important; background-color: var(--cp-panel) !important; }
+.AWlvgEVBunk- { background-image: none !important; }
+
+/* workshop */
+.inqz7Zdx9Xg-.a-Dt3-0cU9Y- { background: transparent !important; border-color: var(--cp-y) !important; color: var(--cp-y) !important; }
+.-GZ6XDQ0-34- { background: var(--cp-y) !important; border-radius: 0 !important; color: #000 !important; }
+.-AoWgUXFzRc- { color: var(--cp-y) !important; }
+.QmqsdxxVc-4- { background: var(--cp-y) !important; }

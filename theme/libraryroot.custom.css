@@ -415,3 +415,32 @@ html.cp-hidden .PlayButton::after, html.cp-hidden .BottomBar::before { animation
   *, *::before, *::after { animation: none !important; }
   #cp-tear, #cp-boot { display: none !important; }
 }
+
+/* ---------- downloads page ---------- */
+.DownloadsPage { background: var(--cp-black) !important; background-image: none !important; }
+.DownloadsPage .Section { background: transparent !important; background-image: none !important; }
+.DownloadsPage .Section:has(.HeroAndLogo) { background: var(--cp-panel) !important; border-bottom: 2px solid var(--cp-y); }
+.DownloadsPage .HeroAndLogo { background-image: none !important; background-color: transparent !important; }
+/* the speed graph: bars in the accent, peak line in the second colour */
+.DownloadsPage .Section:has(.HeroAndLogo) path { fill: rgba(var(--cp-y-rgb), .8) !important; }
+.DownloadsPage .Section:has(.HeroAndLogo) circle { stroke: var(--cp-r) !important; }
+
+/* ---------- settings window ---------- */
+.PagedSettingsDialog_PageListColumn {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border-right: 1px solid var(--cp-line);
+}
+.PagedSettingsDialog_Title { color: var(--cp-y) !important; font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .14em; }
+.PagedSettingsDialog_PageListItem { border-radius: 0 !important; color: var(--cp-text) !important; font-family: var(--cp-font); letter-spacing: .03em; }
+.PagedSettingsDialog_PageListItem:hover { background: rgba(var(--cp-y-rgb), .12) !important; color: var(--cp-y) !important; }
+.PagedSettingsDialog_PageListItem.Active { background: var(--cp-y) !important; color: #000 !important; box-shadow: inset 4px 0 0 var(--cp-r); }
+.PagedSettingsDialog_PageListItem.Active svg, .PagedSettingsDialog_PageListItem.Active svg * { fill: #000 !important; }
+.PagedSettingDialog_ContentColumn { background: var(--cp-black) !important; background-image: none !important; }
+.PagedSettingsDialog_PageContent { background: transparent !important; background-image: none !important; }
+.PagedSettingsDialog_PageContent .Field { background: var(--cp-panel) !important; border: 1px solid var(--cp-line); border-radius: 0 !important; }
+.PagedSettingsDialog_PageContent .Highlight { background: transparent !important; color: var(--cp-y) !important; }
+.ToggleRail { border-radius: 0 !important; }
+.ToggleRail::before { background: var(--cp-y) !important; border-radius: 0 !important; }
+.ToggleSwitch { border-radius: 0 !important; }
+.DialogDropDown_Arrow svg, .DialogDropDown_Arrow polygon { fill: var(--cp-y) !important; }
