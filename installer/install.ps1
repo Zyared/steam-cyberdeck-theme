@@ -50,7 +50,8 @@ function Install-Millennium($steam) {
   Say "Подпись в порядке: $ExpectedSigner" 'Green'
   Say ''
   Say 'Сейчас откроется окно Millennium: нажми в нём кнопку установки и закрой окно, когда закончит.' 'White'
-  Start-Process $file -WorkingDirectory $dir -Wait
+  # Not -Wait: it also waits for child processes, and the Millennium window starts Steam, which keeps running.
+  (Start-Process $file -WorkingDirectory $dir -PassThru).WaitForExit()
   Remove-Item $dir -Recurse -Force -ErrorAction SilentlyContinue
   if (-not (Test-Millennium $steam)) { Fail 'Millennium не установился. Запусти установщик ещё раз.' }
   Say 'Millennium установлен.' 'Green'
