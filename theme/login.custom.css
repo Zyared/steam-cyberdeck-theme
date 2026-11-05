@@ -1,0 +1,62 @@
+/* Cyberpunk theme: sign-in splash shown while Steam starts */
+:root {
+  --cp-y: #fcee0a;
+  --cp-r: #ff003c;
+  --cp-c: #00f0ff;
+  --cp-line: #33311c;
+  --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
+}
+@keyframes cp-tape { to { background-position: 45.25px 0; } }
+@keyframes cp-glitch {
+  0%, 86%, 100% { transform: none; text-shadow: none; }
+  88% { transform: translateX(-3px) skewX(-8deg); text-shadow: 3px 0 var(--cp-r), -3px 0 var(--cp-c); }
+  92% { transform: translateX(3px) skewX(6deg); text-shadow: -3px 0 var(--cp-r), 3px 0 var(--cp-c); }
+  96% { transform: translateX(-1px); text-shadow: 2px 0 var(--cp-c); }
+}
+
+html, body { background: #08080a !important; }
+.title-area-highlight { display: none !important; }
+.title-area-icon:hover { background: var(--cp-r) !important; }
+
+.LoginStaticBackground { background: #08080a !important; background-image: none !important; }
+/* the blurred game covers stay, drained of colour so the yellow carries the screen */
+.LoginAnimatedBackground { filter: grayscale(1) brightness(.5); }
+
+/* yellow tint, and hazard tape along the bottom edge */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(252, 238, 10, .1), rgba(8, 8, 10, .35) 55%, rgba(255, 0, 60, .1));
+  box-shadow: inset 0 2px 0 var(--cp-y);
+}
+body::after {
+  content: "";
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 6px;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(-45deg, var(--cp-y) 0 8px, #000 8px 16px);
+  background-size: 45.25px 45.25px;
+  animation: cp-tape 3s linear infinite;
+}
+.Login { position: relative; z-index: 3; }
+
+/* spinner: the ring is part of the image, so it is recoloured with a hue shift; the white logo is unaffected */
+.SpinnerLoaderContainer img { filter: hue-rotate(213deg) saturate(3) drop-shadow(0 0 10px rgba(252, 238, 10, .45)); }
+
+.LoginStatus {
+  font-family: var(--cp-font) !important;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--cp-y) !important;
+  animation: cp-glitch 2.6s steps(1) infinite;
+}
+.PersonaName { color: var(--cp-y) !important; font-family: var(--cp-font) !important; letter-spacing: .06em; }
+.Progress .ProgressBar { background: var(--cp-line) !important; border-radius: 0 !important; }
+.Progress .ProgressBar > * { background: var(--cp-y) !important; background-image: none !important; border-radius: 0 !important; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }

@@ -1,0 +1,55 @@
+{
+  "name": "Cyberpunk",
+  "author": "Zyared",
+  "description": "Acid yellow on black with red and cyan accents, cut corners, a HUD readout, hazard tape, hard glitch effects and a jack-in boot sequence.",
+  "version": "1.0.0",
+  "header_image": "assets/logo.svg",
+  "splash_image": "assets/logo.svg",
+  "tags": ["dark", "neon", "animated"],
+  "github": { "owner": "Zyared", "repo_name": "steam-cyberdeck-theme" },
+  "Steam-WebKit": "webkit.css",
+  "Patches": [
+    { "MatchRegexString": "^Steam$", "TargetCss": "libraryroot.custom.css", "TargetJs": "libraryroot.custom.js" },
+    { "MatchRegexString": "^(Войти в Steam|Sign in to Steam)$", "TargetCss": "login.custom.css" },
+    { "MatchRegexString": "^notificationtoasts", "TargetCss": "toast.custom.css" },
+    { "MatchRegexString": ".DesktopToastPopup", "TargetCss": "toast.custom.css" },
+    { "MatchRegexString": "(Menu|Supernav)$", "TargetCss": "libraryroot.custom.css" },
+    { "MatchRegexString": ".ModalDialogPopup", "TargetCss": "libraryroot.custom.css" },
+    { "MatchRegexString": ".FullModalOverlay", "TargetCss": "libraryroot.custom.css" },
+    { "MatchRegexString": ".friendsui-container", "TargetCss": "friends.custom.css" }
+  ],
+  "Conditions": {
+    "Boot sequence": {
+      "default": "yes",
+      "description": "Short jack-in screen when Steam starts.",
+      "values": {
+        "yes": {},
+        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-boot.css" } }
+      }
+    },
+    "Screen glitches": {
+      "default": "yes",
+      "description": "Brief red and cyan signal tears every so often.",
+      "values": {
+        "yes": {},
+        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-tear.css" } }
+      }
+    },
+    "HUD readout": {
+      "default": "yes",
+      "description": "Clock and status line in the bottom bar.",
+      "values": {
+        "yes": {},
+        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-hud.css" } }
+      }
+    },
+    "Scanlines": {
+      "default": "yes",
+      "description": "Faint CRT scanlines over the client.",
+      "values": {
+        "yes": {},
+        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-scan.css" } }
+      }
+    }
+  }
+}

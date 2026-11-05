@@ -1,0 +1,180 @@
+/* Cyberpunk theme: friends list and chat */
+:root {
+  --cp-black: #08080a;
+  --cp-panel: #101014;
+  --cp-panel2: #1a1a20;
+  --cp-line: #33311c;
+  --cp-y: #fcee0a;
+  --cp-r: #ff003c;
+  --cp-c: #00f0ff;
+  --cp-text: #e8e5d0;
+  --cp-dim: #918e74;
+  --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
+  --cp-cut-s: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+@keyframes cp-glitch {
+  0%, 100% { text-shadow: none; transform: none; }
+  25% { text-shadow: 2px 0 var(--cp-r), -2px 0 var(--cp-c); transform: translateX(-1px); }
+  50% { text-shadow: -2px 0 var(--cp-r), 2px 0 var(--cp-c); transform: translateX(1px); }
+  75% { text-shadow: 3px 0 var(--cp-c); transform: none; }
+}
+html, body { background: var(--cp-black) !important; }
+::selection { background: var(--cp-y); color: #000; }
+::-webkit-scrollbar { width: 8px; background: transparent; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--cp-line); }
+::-webkit-scrollbar-thumb:hover { background: var(--cp-y); }
+
+/* title areas */
+.titleBarContainer, .ChatTabs {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border-bottom: 2px solid var(--cp-y);
+}
+.title-area-highlight { display: none !important; }
+.title-area-icon:hover { background: var(--cp-r) !important; }
+
+/* the blue strip along the top of friends and chat windows */
+.singleWindowFocusBar, .chatSingleWindowFocusBar {
+  background: linear-gradient(to bottom, var(--cp-y) 0 1px, transparent 1px) !important;
+}
+
+/* friends list */
+.friendlist, .chat_main, .chat_main_flex { background: var(--cp-black) !important; background-image: none !important; }
+.friendListHeaderContainer, .friendListFooter { box-shadow: none !important; }
+/* the status glow behind the current user: an SVG gradient, so CSS colours must target its stops */
+.statusHeaderGlow { opacity: .2; }
+.statusHeaderGlow stop { stop-color: var(--cp-y) !important; }
+.currentUserContainer .gameName { color: var(--cp-text) !important; }
+.currentUserContainer.ingame .statusHeaderGlow stop, .currentUserContainer.in-game .statusHeaderGlow stop { stop-color: var(--cp-r) !important; }
+.currentUserContainer.offline .statusHeaderGlow stop { stop-color: var(--cp-dim) !important; }
+/* party footer: "+1" and "with N more players" */
+.SteamPlayerGroupFooterCount .count, .SteamPlayerGroupFooterLabel { color: var(--cp-r) !important; }
+.currentUserContainer { border-bottom-color: var(--cp-line) !important; }
+.friendlistListContainer, .chatRoomListContainer {
+  background: var(--cp-black) !important;
+  background-image: none !important;
+}
+.friendGroup.onlineFriends, .friendGroup { border-top-color: var(--cp-line) !important; }
+.dropTargetBox { border-color: var(--cp-y) !important; }
+.SteamPlayerGroupLines { border-color: var(--cp-dim) !important; }
+img.avatar { border-color: var(--cp-line) !important; }
+.gameName { color: var(--cp-dim) !important; }
+.SnoozeZ { color: var(--cp-y) !important; }
+.avatarStatus { background: var(--cp-dim) !important; background-image: none !important; }
+.online .avatarStatus { background: var(--cp-y) !important; }
+.ingame .avatarStatus { background: var(--cp-r) !important; }
+.ChatRoomGroupAvatar, .ChatRoomMultiFriendAvatar {
+  background: var(--cp-panel2) !important;
+  background-image: none !important;
+  border-color: var(--cp-line) !important;
+}
+.ChatRoomGroupAvatar_initials { background-image: linear-gradient(var(--cp-y), var(--cp-y)) !important; }
+.friendTab, .chatSectionTitle {
+  background: var(--cp-panel2) !important;
+  background-image: none !important;
+  font-family: var(--cp-font);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.friendTab.activeTab { box-shadow: inset 4px 0 0 var(--cp-y); }
+.friendTab .tabLabel, .chatSectionTitle { color: var(--cp-y) !important; }
+.friendListButton path, .friendListButton circle, .searchIconButton path { fill: var(--cp-y) !important; }
+.friendListFooter { background: var(--cp-panel) !important; background-image: none !important; border-top: 1px solid var(--cp-line); }
+.friendGroup .groupName {
+  font-family: var(--cp-font);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--cp-y) !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+.groupCount { color: var(--cp-dim) !important; }
+.onlineFriends, .offlineFriends, .gameGroup, .ChatRoomList { background-image: none !important; }
+.friend { transition: box-shadow .1s; }
+.friend:hover { background: rgba(252, 238, 10, .08) !important; box-shadow: inset 3px 0 0 var(--cp-y); }
+.friend:hover .playerName { animation: cp-glitch .28s steps(1) 1; }
+.online .playerName { color: var(--cp-y) !important; }
+.ingame .playerName { color: var(--cp-r) !important; }
+.ingame .gameName, .ingame .richPresenceLabel { color: var(--cp-text) !important; }
+.offline .playerName { color: var(--cp-dim) !important; }
+.chatUnreadCircle { background: var(--cp-r) !important; }
+.chatRoomName { font-family: var(--cp-font); letter-spacing: .04em; }
+
+/* context menus in these windows, such as the status menu, render inside the window itself */
+.contextMenu {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border: 1px solid var(--cp-y) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 14px rgba(252, 238, 10, .2) !important;
+}
+.contextMenuContents, .contextMenuSectionContent { background: transparent !important; background-image: none !important; }
+.contextMenuItem {
+  font-family: var(--cp-font);
+  letter-spacing: .03em;
+  color: var(--cp-text) !important;
+  background: transparent !important;
+  border-color: var(--cp-line) !important;
+  border-radius: 0 !important;
+}
+.contextMenuItem.menuChecked { color: var(--cp-y) !important; box-shadow: inset 3px 0 0 var(--cp-y); }
+.persona_menu_descriptor, .persona_menu_dnd_descriptor { color: var(--cp-dim) !important; }
+.contextMenuItem:hover { background: var(--cp-y) !important; color: #000 !important; }
+.contextMenuItem:hover .persona_menu_descriptor, .contextMenuItem:hover .persona_menu_dnd_descriptor,
+.contextMenuItem:hover span { color: #000 !important; }
+.contextMenu .DialogCheckbox { background: var(--cp-panel2) !important; border-radius: 0 !important; }
+.contextMenu .DialogToggle_Label span { color: inherit; }
+
+/* friend hover card: text colours follow the same status rules as the list */
+.miniProfile .personaNameLabel, .miniProfile .gameContent, .miniProfile .persona { text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 6px #000; }
+.miniProfile .persona * { color: inherit !important; }
+.miniProfile .personaNameLabel, .miniProfile .gameContent, .miniProfile .gameState, .miniProfile .richPresence,
+.miniProfile .persona { color: var(--cp-y) !important; }
+.miniProfile:has(.miniProfilePlayer.ingame) .personaNameLabel,
+.miniProfile:has(.miniProfilePlayer.ingame) .gameContent,
+.miniProfile:has(.miniProfilePlayer.ingame) .gameState,
+.miniProfile:has(.miniProfilePlayer.ingame) .richPresence,
+.miniProfile:has(.miniProfilePlayer.ingame) .persona { color: var(--cp-r) !important; }
+.miniProfile:has(.miniProfilePlayer.offline) .personaNameLabel,
+.miniProfile:has(.miniProfilePlayer.offline) .gameContent,
+.miniProfile:has(.miniProfilePlayer.offline) .persona { color: var(--cp-dim) !important; }
+
+/* chat */
+.ChatTab { background: transparent !important; border-radius: 0 !important; }
+.ChatTab:hover { background: rgba(252, 238, 10, .08) !important; }
+.ChatTab.Active { background: var(--cp-panel2) !important; box-shadow: inset 0 -3px 0 var(--cp-y); }
+.chatDialogs, .chatWindow, .chatHeader, .chatHistoryScroll {
+  background: var(--cp-black) !important;
+  background-image: none !important;
+}
+.preHorizDivider, .horizDivider { background: var(--cp-line) !important; }
+.msg.timeDivision { color: var(--cp-y); font-family: var(--cp-font); letter-spacing: .1em; text-transform: uppercase; }
+.speakerTimeStamp { color: var(--cp-dim) !important; font-family: var(--cp-font); }
+.speakerName { font-family: var(--cp-font); letter-spacing: .04em; }
+.speaker.online .speakerName { color: var(--cp-y) !important; }
+.speaker.ingame .speakerName { color: var(--cp-r) !important; }
+.speakerStatus { background: var(--cp-y) !important; }
+.speaker.offline .speakerStatus { background: var(--cp-line) !important; }
+.speakerHoverArea:hover .speakerName { animation: cp-glitch .28s steps(1) 1; }
+.ChatMessageBlock:hover { box-shadow: inset 2px 0 0 var(--cp-y); }
+.isCurrentUser .msgText { color: var(--cp-y); }
+
+.FriendChatTimeStamp { color: var(--cp-dim) !important; border-color: var(--cp-line) !important; }
+.FriendChatTypingNotification { background-image: none !important; color: var(--cp-y) !important; }
+.FriendChatTypingNotification span { background-image: none !important; color: var(--cp-y) !important; }
+.inviteAnotherFriendButton { background: var(--cp-panel2) !important; }
+
+.chatEntry { background: var(--cp-panel) !important; border-top: 1px solid var(--cp-line); }
+.chatEntryControls { background: var(--cp-panel2) !important; border-radius: 0 !important; }
+.chatEntryControls:focus-within { box-shadow: 0 0 0 1px var(--cp-y); }
+.chatTextarea { color: var(--cp-text) !important; caret-color: var(--cp-r); }
+.chatSubmitButton, .VoiceToggle {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+}
+.chatSubmitButton:not(.disabled):hover, .VoiceToggle:not(.Disabled):hover { background: var(--cp-y) !important; }
+.chatSubmitButton:not(.disabled):hover path { fill: #000 !important; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }

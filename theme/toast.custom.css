@@ -1,0 +1,35 @@
+/* Cyberpunk theme: desktop pop-up notifications */
+:root {
+  --cp-panel: #101014;
+  --cp-line: #33311c;
+  --cp-y: #fcee0a;
+  --cp-r: #ff003c;
+  --cp-text: #e8e5d0;
+  --cp-dim: #918e74;
+  --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
+}
+@keyframes cp-glitch {
+  0%, 100% { transform: none; text-shadow: none; }
+  25% { transform: translateX(-2px) skewX(-6deg); text-shadow: 2px 0 var(--cp-r), -2px 0 #00f0ff; }
+  50% { transform: translateX(2px) skewX(5deg); text-shadow: -2px 0 var(--cp-r), 2px 0 #00f0ff; }
+  75% { transform: translateX(-1px); text-shadow: 2px 0 #00f0ff; }
+}
+.DesktopToastTemplate, .StandardTemplateContainer, .StandardTemplate, .ShortTemplate, .StandardTemplateDesktop {
+  background: var(--cp-panel) !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+}
+.DesktopToastTemplate { box-shadow: inset 0 0 0 1px var(--cp-y) !important; }
+.Title, .OnlineTitle, .GroupMessageTitle, .GroupMessageUserName, .PlayerNickName, .FullName {
+  color: var(--cp-y) !important;
+  font-family: var(--cp-font) !important;
+  letter-spacing: .04em;
+}
+.IngameTitle, .IngameTitle .PlayerNickName, .IngameTitle .FullName, .FriendInGameAppColor { color: var(--cp-r) !important; }
+.IngameTitle, .OnlineTitle { animation: cp-glitch .35s steps(1) 2; }
+.Body, .GroupMessageBody, .StandardNotificationDescription { color: var(--cp-text) !important; }
+.StandardNotificationSubText, .Timestamp { color: var(--cp-dim) !important; }
+.AvatarStatus { background: var(--cp-y) !important; background-image: none !important; }
+.DesktopToastTemplate:has(.IngameTitle) .AvatarStatus, .DesktopToastTemplate:has(.FriendInGameAppColor) .AvatarStatus { background: var(--cp-r) !important; }
+.BottomBar { background: var(--cp-line) !important; background-image: none !important; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }

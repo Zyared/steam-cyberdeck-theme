@@ -1,0 +1,60 @@
+/* Cyberpunk theme: store and community pages (colours only, page layout untouched).
+   Short hashed classes below come from the current store build and may change with Steam updates. */
+html, body {
+  background: #08080a !important;
+  background-image: none !important;
+}
+::selection { background: #fcee0a; color: #000; }
+::-webkit-scrollbar { width: 10px; height: 10px; background: #08080a; }
+::-webkit-scrollbar-thumb { background: #33311c; }
+::-webkit-scrollbar-thumb:hover { background: #fcee0a; }
+::-webkit-scrollbar-corner { background: #08080a; }
+
+.page_background, .responsive_page_template_content, .page_content_ctn, .home_page_body_ctn {
+  background-color: #08080a !important;
+}
+
+/* store navigation */
+.XLbP8xOkCYw- {
+  background: #101014 !important;
+  background-image: none !important;
+  border-bottom: 2px solid #fcee0a;
+}
+.A42lZ-U1dhI- { background: #fcee0a !important; color: #000 !important; border-radius: 0 !important; }
+.A42lZ-U1dhI- svg, .A42lZ-U1dhI- path { fill: #000 !important; }
+
+/* panels and capsules */
+.maxz19gKOQc-, .carousel__slider, .deep_dive_key_tags {
+  background-image: none !important;
+  background-color: #101014 !important;
+}
+.jxYpM-g5fRs- { background: #fcee0a !important; color: #000 !important; }
+.rsPEubiF9HI- { background: #1a1a20 !important; }
+.info, .gradient { background-image: none !important; background-color: rgba(16, 16, 20, .9) !important; }
+.x8jWPgfdVoI- { background: #fcee0a !important; color: #000 !important; }
+.JhiIqI-S0Js- { background: #1a1a20 !important; }
+.gift_card_desktop { background-image: none !important; background-color: #1a1a20 !important; border: 1px solid #33311c; }
+.store_main_capsule { background-color: #101014 !important; }
+
+/* tabs and lists */
+.home_tab_button.active { border-color: #fcee0a !important; color: #fcee0a !important; }
+.tab_row_item { background: #101014 !important; }
+.tab_row_item.focus, .tab_preview.focus { background: #1a1a20 !important; box-shadow: inset 3px 0 0 #fcee0a; }
+.tags span, .tags a, .deep_dive_tag { background: #1a1a20 !important; color: #e8e5d0 !important; border-radius: 0 !important; }
+.positive { color: #00f0ff !important; }
+.ds_flag.ds_wishlist_flag { background: #ff003c !important; }
+.LoadingThrobber .Bar { background: #fcee0a !important; }
+
+/* buttons and prices */
+.btn_green_steamui, .btn_green_white_innerfade, .btn_blue_steamui, .btn_blue_white_innerfade {
+  background: #fcee0a !important;
+  border-radius: 0 !important;
+}
+.btn_green_steamui > span, .btn_green_white_innerfade > span,
+.btn_blue_steamui > span, .btn_blue_white_innerfade > span {
+  background: transparent !important;
+  color: #000 !important;
+  border-radius: 0 !important;
+}
+.discount_pct, .nw-DtQ670Sc- { background: #ff003c !important; color: #fff !important; }
+.discount_final_price { color: #fcee0a !important; }
