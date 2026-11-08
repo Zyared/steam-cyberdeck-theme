@@ -1,53 +1,36 @@
 /* Cyberpunk theme: main window, menus and dialogs */
 :root {
-  --cp-black: #08080a;
-  --cp-panel: #101014;
-  --cp-panel2: #1a1a20;
-  --cp-line: #33311c;
-  --cp-y: #fcee0a;
-  --cp-r: #ff003c;
-  --cp-c: #00f0ff;
-  --cp-text: #e8e5d0;
-  --cp-dim: #918e74;
-  --cp-y-rgb: 252, 238, 10;
-  --cp-r-rgb: 255, 0, 60;
-  --cp-c-rgb: 0, 240, 255;
-  --cp-black-rgb: 8, 8, 10;
-  --cp-panel-rgb: 16, 16, 20;
-  --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
-  --cp-cut: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-  --cp-cut-s: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
-  --cp-tape: repeating-linear-gradient(-45deg, var(--cp-y) 0 8px, #000 8px 16px);
+  --cp-black: #07090d;
+  --cp-panel: #101015;
+  --cp-panel2: #1b151b;
+  --cp-line: #45202a;
+  --cp-y: #ed2438;
+  --cp-r: #ff5364;
+  --cp-c: #d5d7df;
+  --cp-text: #e5e5eb;
+  --cp-dim: #99929e;
+  --cp-y-rgb: 237, 36, 56;
+  --cp-r-rgb: 255, 83, 100;
+  --cp-c-rgb: 213, 215, 223;
+  --cp-black-rgb: 7, 9, 13;
+  --cp-panel-rgb: 16, 16, 21;
+  --cp-font: "Bahnschrift", "Segoe UI", "Segoe UI", sans-serif;
+  --cp-cut: inset(0);
+  --cp-cut-s: inset(0);
+  --cp-tape: #303039;
 }
 
-@keyframes cp-glitch {
-  0%, 100% { transform: none; text-shadow: none; }
-  20% { transform: translateX(-2px) skewX(-8deg); text-shadow: 2px 0 var(--cp-r), -2px 0 var(--cp-c); }
-  40% { transform: translateX(2px) skewX(6deg); text-shadow: -2px 0 var(--cp-r), 2px 0 var(--cp-c); }
-  60% { transform: translateX(-1px); text-shadow: 3px 0 var(--cp-c); }
-  80% { transform: translateX(1px) skewX(-3deg); text-shadow: -3px 0 var(--cp-r); }
-}
-@keyframes cp-split {
-  0%, 100% { filter: drop-shadow(0 0 7px rgba(var(--cp-y-rgb), .55)); }
-  25% { filter: drop-shadow(-5px 0 0 var(--cp-r)) drop-shadow(5px 0 0 var(--cp-c)); }
-  50% { filter: drop-shadow(5px 0 0 var(--cp-r)) drop-shadow(-5px 0 0 var(--cp-c)); }
-  75% { filter: drop-shadow(-2px 0 0 var(--cp-r)) drop-shadow(2px 0 0 var(--cp-c)); }
-}
-@keyframes cp-tape { to { background-position: 45.25px 0; } }
-@keyframes cp-run { from { transform: translateX(-30vw); } to { transform: translateX(110vw); } }
-@keyframes cp-sheen { 0%, 72% { transform: translateX(-140%) skewX(-24deg); } 100% { transform: translateX(380%) skewX(-24deg); } }
-@keyframes cp-flicker {
-  0%, 89%, 100% { opacity: 1; transform: skewX(-10deg); }
-  90% { opacity: .35; transform: skewX(-10deg) translateX(-3px); }
-  92% { opacity: 1; transform: skewX(4deg) translateX(3px); }
-  94% { opacity: .55; transform: skewX(-10deg); }
-  96% { opacity: 1; transform: skewX(-16deg) translateX(-1px); }
-}
-@keyframes cp-tick { 50% { opacity: .25; } }
-@keyframes cp-tear { 0%, 100% { opacity: 0; } 15%, 85% { opacity: 1; } 40% { transform: translateX(-26px); } 70% { transform: translateX(18px); } }
-@keyframes cp-boot-out { to { clip-path: inset(50% 0 50% 0); visibility: hidden; } }
-@keyframes cp-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes cp-pop { 0% { opacity: 0; transform: translateY(6px); } 100% { opacity: 1; transform: none; } }
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---------- base ---------- */
 html, body { background: var(--cp-black) !important; }
@@ -76,20 +59,20 @@ body { color: var(--cp-text); }
   pointer-events: none;
   background: linear-gradient(90deg, transparent, #fff, var(--cp-r), transparent);
   will-change: transform;
-  animation: cp-run 5.5s linear infinite;
+
 }
 .RootMenuButton { font-family: var(--cp-font); color: var(--cp-dim) !important; }
 .RootMenuButton:hover { color: var(--cp-y) !important; }
 .SuperNav .MenuButton {
   font-family: var(--cp-font) !important;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .06em;
   color: var(--cp-text) !important;
 }
 .SuperNav .MenuButton::after { background: var(--cp-y) !important; box-shadow: 0 0 8px var(--cp-y); height: 3px !important; border-radius: 0 !important; }
 .SuperNav .SuperNavMenu:hover .MenuButton {
   color: var(--cp-y) !important;
-  animation: cp-glitch .3s steps(1) 1;
+
 }
 .AccountMenu, .NotificationsButton {
   background: transparent !important;
@@ -121,10 +104,10 @@ body { color: var(--cp-text); }
   pointer-events: none;
   background: var(--cp-tape);
   background-size: 45.25px 45.25px;
-  animation: cp-tape 3s linear infinite;
+
 }
 .AddGameButton, .FriendsButton { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .08em; }
-.AddGameButton:hover, .FriendsButton:hover { color: var(--cp-y) !important; animation: cp-glitch .3s steps(1) 1; }
+.AddGameButton:hover, .FriendsButton:hover { color: var(--cp-y) !important;  }
 .Queue { color: var(--cp-y) !important; font-family: var(--cp-font); }
 .Alert { background: var(--cp-panel2) !important; border-top: 2px solid var(--cp-r); }
 .AlertButton { background: transparent !important; border: 1px solid var(--cp-y); border-radius: 0 !important; color: var(--cp-y) !important; clip-path: var(--cp-cut-s); }
@@ -154,7 +137,7 @@ body { color: var(--cp-text); }
 .Library .ViewName { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .08em; }
 .Library .DialogInput { background: transparent !important; border-radius: 0 !important; color: var(--cp-y) !important; caret-color: var(--cp-r); font-family: var(--cp-font); }
 .Library .DialogInput:focus { box-shadow: inset 0 -2px 0 var(--cp-y) !important; }
-.Library .SectionName { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .14em; color: var(--cp-y) !important; }
+.Library .SectionName { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .08em; color: var(--cp-y) !important; }
 .Library .Container.Focusable:has(.SectionName) { background-image: none !important; background-color: transparent !important; }
 .Library .Container.Installed .Draggable { transition: box-shadow .1s, padding-left .1s; }
 .Library .Container.Installed:hover .Draggable {
@@ -177,7 +160,7 @@ body { color: var(--cp-text); }
 .ShowcaseHeader, .UpdatesContainer .Name {
   font-family: var(--cp-font);
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .06em;
   color: var(--cp-y) !important;
 }
 .ShowcaseHeader::before { content: ""; flex: none; align-self: center; width: 5px; height: 16px; margin-right: 9px; background: var(--cp-y); transform: skewX(-20deg); }
@@ -200,7 +183,7 @@ body { color: var(--cp-text); }
 .LibraryItemBox, .Portrait, .Capsule { border-radius: 0 !important; }
 .PortraitImage, .LandscapeImage { border-radius: 0 !important; clip-path: var(--cp-cut); }
 .LibraryItemBox:hover, .Capsule:hover, .RecentGame:hover {
-  animation: cp-split .36s steps(1) 1;
+
   filter: drop-shadow(0 0 7px rgba(var(--cp-y-rgb), .55));
   z-index: 3;
 }
@@ -219,7 +202,7 @@ body { color: var(--cp-text); }
 .BackdropGlass { background: var(--cp-black) !important; background-image: none !important; opacity: .85; }
 .FocusBar { background: var(--cp-y) !important; background-image: none !important; }
 
-.ActionSection { filter: drop-shadow(4px 4px 0 var(--cp-r)); }
+.ActionSection { filter: none; }
 .PlayButton {
   position: relative;
   overflow: hidden;
@@ -233,7 +216,7 @@ body { color: var(--cp-text); }
   color: #000 !important;
   font-family: var(--cp-font);
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .08em;
 }
 .PlayButton svg, .PlayButton svg * { fill: #000 !important; }
 .PlayButton::after {
@@ -244,14 +227,14 @@ body { color: var(--cp-text); }
   pointer-events: none;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .85), transparent);
   will-change: transform;
-  animation: cp-sheen 3.6s ease-in-out infinite;
+
 }
-.ActionSection:hover { filter: drop-shadow(4px 4px 0 var(--cp-y)); }
+.ActionSection:hover { filter: none; }
 .PlayButton:hover { background: var(--cp-r) !important; }
 .PlayButton:hover .ButtonText { color: #fff !important; }
 .PlayButton:hover svg, .PlayButton:hover svg * { fill: #fff !important; }
 
-.PlayBarLabel { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .1em; color: var(--cp-y) !important; }
+.PlayBarLabel { font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .06em; color: var(--cp-y) !important; }
 .LastPlayedInfo, .PlaytimeStatus { color: var(--cp-text) !important; }
 .PlayBarGameName { font-family: var(--cp-font); text-transform: uppercase; color: var(--cp-y) !important; }
 .RightControls path, .RightControls svg { fill: var(--cp-y) !important; }
@@ -266,7 +249,7 @@ body { color: var(--cp-text); }
 .SectionHeader {
   font-family: var(--cp-font);
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .06em;
   background: transparent !important;
   background-image: none !important;
   box-shadow: inset 4px 0 0 var(--cp-y);
@@ -277,7 +260,7 @@ body { color: var(--cp-text); }
 .ReviewContainer, .RatingContainer { background: var(--cp-panel2) !important; border-radius: 0 !important; }
 .LeftContainer .Playtime { color: var(--cp-y) !important; }
 .ReviewThumbButton path { fill: var(--cp-y) !important; }
-.LinksSection .Link:hover .Text { color: var(--cp-y) !important; animation: cp-glitch .3s steps(1) 1; }
+.LinksSection .Link:hover .Text { color: var(--cp-y) !important;  }
 
 /* friend status colours: online yellow, in game red */
 .online .playerName, .ActorName .playerName { color: var(--cp-y) !important; }
@@ -340,82 +323,6 @@ html.MillenniumWindow_ContextMenu body::after {
 }
 
 /* ---------- injected overlays (main window only) ---------- */
-#cp-scan, #cp-tear, #cp-boot, #cp-logo, #cp-hud { pointer-events: none; position: fixed; }
-#cp-scan {
-  inset: 0;
-  z-index: 99990;
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .1) 0 1px, transparent 1px 4px);
-}
-#cp-tear { inset: 0; z-index: 99992; overflow: hidden; }
-#cp-tear i {
-  position: absolute;
-  left: 0; right: 0;
-  opacity: 0;
-  mix-blend-mode: screen;
-}
-#cp-tear.on i { animation: cp-tear .2s steps(1) 1; }
-#cp-logo {
-  top: 38px; right: 18px;
-  z-index: 99985;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  height: 24px;
-  font: 400 19px var(--cp-font);
-  letter-spacing: .1em;
-  color: var(--cp-y);
-  text-shadow: 0 0 10px rgba(var(--cp-y-rgb), .5);
-  transform: skewX(-10deg);
-  animation: cp-flicker 8s steps(1) infinite;
-}
-#cp-logo b { color: var(--cp-r); font-weight: 400; text-shadow: 0 0 10px rgba(var(--cp-r-rgb), .6); }
-#cp-hud {
-  left: 190px; bottom: 14px;
-  z-index: 99985;
-  display: flex;
-  gap: 14px;
-  font: 13px var(--cp-font);
-  letter-spacing: .1em;
-  color: var(--cp-dim);
-}
-#cp-hud b { color: var(--cp-y); font-weight: 400; }
-#cp-hud u { color: var(--cp-c); text-decoration: none; animation: cp-tick 2s steps(1) infinite; }
-#cp-boot {
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 22vw;
-  background: #000;
-  color: var(--cp-y);
-  font-family: var(--cp-font);
-  animation: cp-boot-out .28s steps(6) 2.35s forwards;
-}
-#cp-boot h1 {
-  margin: 0;
-  font: 400 84px/1 var(--cp-font);
-  letter-spacing: .06em;
-  transform: skewX(-10deg);
-  text-shadow: 4px 0 var(--cp-r), -4px 0 var(--cp-c);
-  animation: cp-flicker 1.1s steps(1) infinite;
-}
-#cp-boot h1 b { color: var(--cp-r); font-weight: 400; }
-#cp-boot .pct { margin-top: 18px; font-size: 46px; line-height: 1; color: #fff; }
-#cp-boot .bar { width: 56vw; height: 10px; margin-top: 10px; background: var(--cp-tape); transform-origin: left; animation: cp-bar 2.2s linear both; }
-#cp-boot pre { margin: 14px 0 0; min-height: 76px; font: 15px/1.65 var(--cp-font); letter-spacing: .1em; color: var(--cp-c); white-space: pre-wrap; }
-
-html.cp-hidden #cp-logo, html.cp-hidden #cp-hud u, html.cp-hidden .TopBar::after,
-html.cp-hidden .PlayButton::after, html.cp-hidden .BottomBar::before { animation-play-state: paused; }
-
-@media (max-width: 1100px) { #cp-hud { display: none; } }
-@media (max-width: 900px) { #cp-logo { display: none; } }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; }
-  #cp-tear, #cp-boot { display: none !important; }
-}
-
 /* ---------- downloads page ---------- */
 .DownloadsPage { background: var(--cp-black) !important; background-image: none !important; }
 .DownloadsPage .Section { background: transparent !important; background-image: none !important; }
@@ -431,7 +338,7 @@ html.cp-hidden .PlayButton::after, html.cp-hidden .BottomBar::before { animation
   background-image: none !important;
   border-right: 1px solid var(--cp-line);
 }
-.PagedSettingsDialog_Title { color: var(--cp-y) !important; font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .14em; }
+.PagedSettingsDialog_Title { color: var(--cp-y) !important; font-family: var(--cp-font); text-transform: uppercase; letter-spacing: .08em; }
 .PagedSettingsDialog_PageListItem { border-radius: 0 !important; color: var(--cp-text) !important; font-family: var(--cp-font); letter-spacing: .03em; }
 .PagedSettingsDialog_PageListItem:hover { background: rgba(var(--cp-y-rgb), .12) !important; color: var(--cp-y) !important; }
 .PagedSettingsDialog_PageListItem.Active { background: var(--cp-y) !important; color: #000 !important; box-shadow: inset 4px 0 0 var(--cp-r); }
@@ -444,3 +351,95 @@ html.cp-hidden .PlayButton::after, html.cp-hidden .BottomBar::before { animation
 .ToggleRail::before { background: var(--cp-y) !important; border-radius: 0 !important; }
 .ToggleSwitch { border-radius: 0 !important; }
 .DialogDropDown_Arrow svg, .DialogDropDown_Arrow polygon { fill: var(--cp-y) !important; }
+
+/* Arasaka shell: quiet surfaces, functional accents, rectangular geometry. */
+.TopBar { border-bottom: 1px solid #303039; background: #0b0c10 !important; }
+.TopBar::after { display: none; }
+.SuperNav .MenuButton { font-size: 17px !important; letter-spacing: .09em; font-weight: 600; }
+.SuperNav .MenuButton::after { height: 2px !important; box-shadow: none; }
+.AccountMenu, .AccountMenu * { color: var(--cp-text) !important; }
+.AnnouncementsButton { background: #251219 !important; border: 1px solid #6a2632; }
+.URLBar, .URLBarReplacement { border-bottom-color: #25262e; }
+.URLBar .URL { color: #84848e !important; font-size: 11px; }
+.BottomBar { border-top: 1px solid #303039; background: #0b0c10 !important; }
+.BottomBar::before { background: #ed2438; width: 56px; height: 2px; right: auto; top: -1px; }
+.Library .MainPanel > div { background-image: none !important; }
+.Library .HomeBox .Bar.Selected { background: #22141b !important; box-shadow: inset 3px 0 #ed2438; }
+.Library .HomeBox .Bar.Selected .Label { color: #eeeef2 !important; }
+.Library .Container.Installed.Selected { background: #291820 !important; box-shadow: inset 3px 0 #ed2438; }
+.Library .Container.Installed.Selected span { color: #f1f1f5 !important; }
+.Library .SectionName { color: #8f909b !important; font-size: 11px; letter-spacing: .12em; }
+.ShowcaseHeader, .ShowcaseHeader > div:first-child, .ShowcaseHeader > div:first-child * { color: #dfdfe6 !important; }
+.ShowcaseHeader::before { width: 3px; height: 15px; transform: none; }
+.UpdatesContainer .PageableContainer > div:first-child .Name { background: transparent; border-left: 3px solid #ed2438; color: #dfdfe6 !important; padding: 4px 12px; }
+.EventTimeSpan { background: #18191f !important; border-left: 2px solid #ed2438; }
+.LibraryItemBox:hover, .Capsule:hover, .RecentGame:hover { filter: none; outline: 1px solid #b33143; outline-offset: 3px; }
+.PortraitImage, .LandscapeImage { filter: none; }
+.PlayButton { background: #b51d30 !important; box-shadow: none !important; }
+.PlayButton:hover { background: #d0253b !important; }
+.PlayButton::after { display: none; }
+.PagedSettingsDialog_PageListItem.Active { background: #291820 !important; color: #f1f1f5 !important; box-shadow: inset 3px 0 #ed2438; }
+.PagedSettingsDialog_PageListItem.Active svg, .PagedSettingsDialog_PageListItem.Active svg * { fill: #ed2438 !important; }
+#cp-logo, #cp-hud, #cp-boot { position: fixed; pointer-events: none; }
+#cp-logo { top: 31px; right: 20px; z-index: 99985; display: flex; align-items: center; gap: 9px; color: #e5e5eb; font: 600 17px/1.1 Bahnschrift, sans-serif; letter-spacing: .15em; }
+#cp-logo svg { width: 28px; height: 28px; color: #ed2438; }
+#cp-logo svg path, #cp-boot svg path { fill: none; stroke: currentColor; stroke-width: 4; }
+#cp-logo svg circle, #cp-boot svg circle { fill: currentColor; }
+#cp-logo small { display: block; margin-top: 4px; color: #82828e; font-size: 7px; letter-spacing: .19em; }
+#cp-hud { left: 195px; bottom: 13px; z-index: 99985; display: flex; align-items: center; gap: 18px; color: #747580; font: 9px/1.4 Consolas, monospace; letter-spacing: .04em; }
+#cp-hud b { color: #bebfc9; font-weight: 400; margin-left: 4px; }
+#cp-hud i { width: 4px; height: 4px; background: #ed2438; }
+#cp-boot { inset: 0; z-index: 99999; padding: 18vh 12vw 8vh; background: #0b0c10; color: #e5e5eb; font-family: Bahnschrift, sans-serif; animation: as-enter .2s ease-out; }
+.as-boot-brand { display: flex; align-items: center; gap: 20px; font-size: 37px; letter-spacing: .2em; font-weight: 600; }
+.as-boot-brand svg { width: 64px; height: 64px; color: #ed2438; }
+.as-boot-brand small { display: block; margin-top: 9px; font: 10px Consolas, monospace; letter-spacing: .15em; color: #82828e; }
+.as-boot-rule { height: 1px; background: #303039; margin: 40px 0 24px; }
+#cp-boot p { display: flex; justify-content: space-between; font: 10px Consolas, monospace; letter-spacing: .12em; color: #858590; }
+#cp-boot p span { color: #ed2438; }
+#cp-boot h2 { margin: 32px 0; font-size: clamp(25px, 3.5vw, 54px); font-weight: 300; }
+#cp-boot .bar { height: 2px; background: #ed2438; transform-origin: left; animation: as-load 1.5s ease-out both; }
+#cp-boot pre { margin-top: 24px; color: #858590; font: 10px/2 Consolas, monospace; letter-spacing: .08em; }
+#cp-boot footer { display: flex; justify-content: space-between; position: absolute; bottom: 8vh; left: 12vw; right: 12vw; color: #62636f; font: 9px Consolas, monospace; letter-spacing: .08em; }
+@keyframes as-enter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes as-load { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (max-width: 1200px) { #cp-hud { display: none; } }
+@media (max-width: 1050px) { #cp-logo { display: none; } }
+@media (prefers-reduced-motion: reduce) { #cp-boot { display: none; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Replace only the decorative spinner, preserving status and account controls. */
+.SpinnerLoaderContainer, ._3CN5DkgNMvdtT9fJhNOj_v { position: relative; }
+.SpinnerLoaderContainer > img, ._3CN5DkgNMvdtT9fJhNOj_v > img { visibility: hidden !important; }
+.SpinnerLoaderContainer::before, ._3CN5DkgNMvdtT9fJhNOj_v::before {
+  content: ''; position: absolute; pointer-events: none; width: 76px; height: 76px;
+  top: 0; left: 50%; transform: translateX(-50%);
+  background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22%23ed2438%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2212%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M32%2023v35M32%2044%2012%2028m20%2016%2020-16%22%20fill%3D%22none%22%20stroke%3D%22%23ed2438%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E') center / contain no-repeat;
+}
+.SpinnerLoaderContainer::after, ._3CN5DkgNMvdtT9fJhNOj_v::after {
+  content: ''; position: absolute; pointer-events: none; width: 80px; height: 2px;
+  top: 88px; left: calc(50% - 40px); background: #ed2438;
+  transform-origin: left; animation: arasaka-link 1.5s ease-in-out infinite alternate;
+}
+@keyframes arasaka-link { from { transform: scaleX(.18); opacity: .4; } to { transform: scaleX(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .SpinnerLoaderContainer::after, ._3CN5DkgNMvdtT9fJhNOj_v::after { animation: none; } }
+
+/* Known Steam branding only; never replace avatars or game artwork. */
+.RootMenuButton:first-child > svg, .RootMenuButton:first-child > img,
+.SteamLogoIcon, .Tz7ae7SsFpdVaMYJhMCpc,
+.ShortNotificationSteamLogo, ._1jNC4Z-i1OtCMEKri-Lz1e,
+.LowBatterySteamLogo, ._3dD6fW-BZd-kuS1x0FrHj8 {
+  content: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22%23ed2438%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2212%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M32%2023v35M32%2044%2012%2028m20%2016%2020-16%22%20fill%3D%22none%22%20stroke%3D%22%23ed2438%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E') !important; object-fit: contain; color: #ed2438 !important;
+}
+/* Steam's application-menu logo has its own wrapper, not a direct child. */
+.SteamButton, .bSKGlAJG2UVWTsntEJY2v { position: relative; }
+.SteamButton .Logo, .bSKGlAJG2UVWTsntEJY2v .GG9wVQz6PLlhGHlJyZh4E { opacity: 0 !important; }
+.SteamButton::before, .bSKGlAJG2UVWTsntEJY2v::before { content: ''; position: absolute; pointer-events: none; left: 0; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22%23ed2438%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2212%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M32%2023v35M32%2044%2012%2028m20%2016%2020-16%22%20fill%3D%22none%22%20stroke%3D%22%23ed2438%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E%0D%0A') center / contain no-repeat; }
+
+/* Ready-to-play glyph contains a stroked circle, not only filled paths. */
+.Library .CheckboxWithImage .SVGIcon_ReadyToPlay,
+.Library .CheckboxWithImage:is(:hover, :focus-visible, .Active) .SVGIcon_ReadyToPlay,
+.SVGIcon_ReadyToPlay { color: var(--cp-y) !important; }
+.SVGIcon_ReadyToPlay circle, .SVGIcon_ReadyToPlay polyline {
+  stroke: var(--cp-y) !important;
+}
+.SVGIcon_ReadyToPlay path { fill: var(--cp-y) !important; }
+.SVGIcon_ReadyToPlay circle { fill: none !important; }

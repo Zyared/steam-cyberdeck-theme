@@ -1,34 +1,101 @@
 {
   "name": "Cyberpunk",
   "author": "Zyared",
-  "description": "Acid yellow on black with red and cyan accents, cut corners, a HUD readout, hazard tape, hard glitch effects and a jack-in boot sequence.",
-  "version": "1.1.0",
+  "description": "Arasaka Corporate Systems: a quiet graphite workspace, crimson navigation, silver typography and personnel terminal boot.",
+  "version": "2.0.0",
   "header_image": "assets/logo.svg",
   "splash_image": "assets/logo.svg",
-  "tags": ["dark", "neon", "animated"],
-  "github": { "owner": "Zyared", "repo_name": "steam-cyberdeck-theme" },
+  "tags": [
+    "dark",
+    "neon",
+    "animated"
+  ],
+  "github": {
+    "owner": "Zyared",
+    "repo_name": "steam-cyberdeck-theme"
+  },
   "Steam-WebKit": "webkit.css",
   "Patches": [
-    { "MatchRegexString": "^Steam$", "TargetCss": "libraryroot.custom.css", "TargetJs": "libraryroot.custom.js" },
-    { "MatchRegexString": "^(Войти в Steam|Sign in to Steam)$", "TargetCss": "login.custom.css" },
-    { "MatchRegexString": "^notificationtoasts", "TargetCss": "toast.custom.css" },
-    { "MatchRegexString": ".DesktopToastPopup", "TargetCss": "toast.custom.css" },
-    { "MatchRegexString": "(Menu|Supernav)$", "TargetCss": "libraryroot.custom.css" },
-    { "MatchRegexString": ".ModalDialogPopup", "TargetCss": "libraryroot.custom.css" },
-    { "MatchRegexString": ".FullModalOverlay", "TargetCss": "libraryroot.custom.css" },
-    { "MatchRegexString": ".friendsui-container", "TargetCss": "friends.custom.css" }
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "libraryroot.custom.css",
+      "TargetJs": "libraryroot.custom.js"
+    },
+    {
+      "MatchRegexString": "^(Войти в Steam|Sign in to Steam)$",
+      "TargetCss": "login.custom.css"
+    },
+    {
+      "MatchRegexString": "^notificationtoasts",
+      "TargetCss": "toast.custom.css"
+    },
+    {
+      "MatchRegexString": ".DesktopToastPopup",
+      "TargetCss": "toast.custom.css"
+    },
+    {
+      "MatchRegexString": "(Menu|Supernav)$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": ".ModalDialogPopup",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": ".FullModalOverlay",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": ".friendsui-container",
+      "TargetCss": "friends.custom.css"
+    }
   ],
   "Conditions": {
     "Color scheme": {
-      "default": "Acid yellow",
+      "default": "Arasaka",
       "description": "Main colours of the whole theme. Restart Steam after changing it.",
       "values": {
-        "Acid yellow": {},
-        "Blood red": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-blood.css" } },
-        "Ice cyan": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-ice.css" } },
-        "Toxic green": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-toxic.css" } },
-        "Neon violet": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-violet.css" } },
-        "Hot pink": { "TargetCss": { "affects": [".*"], "src": "opt/scheme-pink.css" } }
+        "Arasaka": {},
+        "Blood red": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "opt/scheme-blood.css"
+          }
+        },
+        "Ice cyan": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "opt/scheme-ice.css"
+          }
+        },
+        "Toxic green": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "opt/scheme-toxic.css"
+          }
+        },
+        "Neon violet": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "opt/scheme-violet.css"
+          }
+        },
+        "Hot pink": {
+          "TargetCss": {
+            "affects": [
+              ".*"
+            ],
+            "src": "opt/scheme-pink.css"
+          }
+        }
       }
     },
     "Boot sequence": {
@@ -36,15 +103,14 @@
       "description": "Short jack-in screen when Steam starts.",
       "values": {
         "yes": {},
-        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-boot.css" } }
-      }
-    },
-    "Screen glitches": {
-      "default": "yes",
-      "description": "Brief red and cyan signal tears every so often.",
-      "values": {
-        "yes": {},
-        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-tear.css" } }
+        "no": {
+          "TargetCss": {
+            "affects": [
+              "^Steam$"
+            ],
+            "src": "opt/no-boot.css"
+          }
+        }
       }
     },
     "HUD readout": {
@@ -52,15 +118,14 @@
       "description": "Clock and status line in the bottom bar.",
       "values": {
         "yes": {},
-        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-hud.css" } }
-      }
-    },
-    "Scanlines": {
-      "default": "yes",
-      "description": "Faint CRT scanlines over the client.",
-      "values": {
-        "yes": {},
-        "no": { "TargetCss": { "affects": ["^Steam$"], "src": "opt/no-scan.css" } }
+        "no": {
+          "TargetCss": {
+            "affects": [
+              "^Steam$"
+            ],
+            "src": "opt/no-hud.css"
+          }
+        }
       }
     }
   }

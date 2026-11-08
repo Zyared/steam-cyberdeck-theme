@@ -1,27 +1,22 @@
 /* Cyberpunk theme: desktop pop-up notifications */
 :root {
-  --cp-black: #08080a;
-  --cp-panel: #101014;
-  --cp-panel2: #1a1a20;
-  --cp-line: #33311c;
-  --cp-y: #fcee0a;
-  --cp-r: #ff003c;
-  --cp-c: #00f0ff;
-  --cp-text: #e8e5d0;
-  --cp-dim: #918e74;
-  --cp-y-rgb: 252, 238, 10;
-  --cp-r-rgb: 255, 0, 60;
-  --cp-c-rgb: 0, 240, 255;
-  --cp-black-rgb: 8, 8, 10;
-  --cp-panel-rgb: 16, 16, 20;
-  --cp-font: "Bahnschrift SemiBold Condensed", Bahnschrift, "Segoe UI", sans-serif;
+  --cp-black: #07090d;
+  --cp-panel: #101015;
+  --cp-panel2: #1b151b;
+  --cp-line: #45202a;
+  --cp-y: #ed2438;
+  --cp-r: #ff5364;
+  --cp-c: #d5d7df;
+  --cp-text: #e5e5eb;
+  --cp-dim: #99929e;
+  --cp-y-rgb: 237, 36, 56;
+  --cp-r-rgb: 255, 83, 100;
+  --cp-c-rgb: 213, 215, 223;
+  --cp-black-rgb: 7, 9, 13;
+  --cp-panel-rgb: 16, 16, 21;
+  --cp-font: "Bahnschrift", "Segoe UI", "Segoe UI", sans-serif;
 }
-@keyframes cp-glitch {
-  0%, 100% { transform: none; text-shadow: none; }
-  25% { transform: translateX(-2px) skewX(-6deg); text-shadow: 2px 0 var(--cp-r), -2px 0 var(--cp-c); }
-  50% { transform: translateX(2px) skewX(5deg); text-shadow: -2px 0 var(--cp-r), 2px 0 var(--cp-c); }
-  75% { transform: translateX(-1px); text-shadow: 2px 0 var(--cp-c); }
-}
+
 .DesktopToastTemplate, .StandardTemplateContainer, .StandardTemplate, .ShortTemplate, .StandardTemplateDesktop {
   background: var(--cp-panel) !important;
   background-image: none !important;
@@ -34,10 +29,22 @@
   letter-spacing: .04em;
 }
 .IngameTitle, .IngameTitle .PlayerNickName, .IngameTitle .FullName, .FriendInGameAppColor { color: var(--cp-r) !important; }
-.IngameTitle, .OnlineTitle { animation: cp-glitch .35s steps(1) 2; }
+.IngameTitle, .OnlineTitle {  }
 .Body, .GroupMessageBody, .StandardNotificationDescription { color: var(--cp-text) !important; }
 .StandardNotificationSubText, .Timestamp { color: var(--cp-dim) !important; }
 .AvatarStatus { background: var(--cp-y) !important; background-image: none !important; }
 .DesktopToastTemplate:has(.IngameTitle) .AvatarStatus, .DesktopToastTemplate:has(.FriendInGameAppColor) .AvatarStatus { background: var(--cp-r) !important; }
 .BottomBar { background: var(--cp-line) !important; background-image: none !important; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+
+/* Corporate surfaces: focus stays on people and content. */
+:root { --cp-cut: inset(0); --cp-cut-s: inset(0); }
+* { text-shadow: none !important; }
+
+/* Known Steam branding only; never replace avatars or game artwork. */
+.RootMenuButton:first-child > svg, .RootMenuButton:first-child > img,
+.SteamLogoIcon, .Tz7ae7SsFpdVaMYJhMCpc,
+.ShortNotificationSteamLogo, ._1jNC4Z-i1OtCMEKri-Lz1e,
+.LowBatterySteamLogo, ._3dD6fW-BZd-kuS1x0FrHj8 {
+  content: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22%23ed2438%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2212%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M32%2023v35M32%2044%2012%2028m20%2016%2020-16%22%20fill%3D%22none%22%20stroke%3D%22%23ed2438%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E') !important; object-fit: contain; color: #ed2438 !important;
+}

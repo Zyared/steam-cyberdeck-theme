@@ -1,20 +1,20 @@
 /* Cyberpunk theme: store and community pages (colours only, page layout untouched).
    Short hashed classes below come from the current store build and may change with Steam updates. */
 :root {
-  --cp-black: #08080a;
-  --cp-panel: #101014;
-  --cp-panel2: #1a1a20;
-  --cp-line: #33311c;
-  --cp-y: #fcee0a;
-  --cp-r: #ff003c;
-  --cp-c: #00f0ff;
-  --cp-text: #e8e5d0;
-  --cp-dim: #918e74;
-  --cp-y-rgb: 252, 238, 10;
-  --cp-r-rgb: 255, 0, 60;
-  --cp-c-rgb: 0, 240, 255;
-  --cp-black-rgb: 8, 8, 10;
-  --cp-panel-rgb: 16, 16, 20;
+  --cp-black: #07090d;
+  --cp-panel: #101015;
+  --cp-panel2: #1b151b;
+  --cp-line: #45202a;
+  --cp-y: #ed2438;
+  --cp-r: #ff5364;
+  --cp-c: #d5d7df;
+  --cp-text: #e5e5eb;
+  --cp-dim: #99929e;
+  --cp-y-rgb: 237, 36, 56;
+  --cp-r-rgb: 255, 83, 100;
+  --cp-c-rgb: 213, 215, 223;
+  --cp-black-rgb: 7, 9, 13;
+  --cp-panel-rgb: 16, 16, 21;
 }
 html, body {
   background: var(--cp-black) !important;
@@ -243,3 +243,9 @@ div:has(> .marketBetaNoteText), div:has(> div > .marketBetaNoteText) { backgroun
 .-GZ6XDQ0-34- { background: var(--cp-y) !important; border-radius: 0 !important; color: #000 !important; }
 .-AoWgUXFzRc- { color: var(--cp-y) !important; }
 .QmqsdxxVc-4- { background: var(--cp-y) !important; }
+
+/* Corporate surfaces: focus stays on people and content. */
+:root { --cp-cut: inset(0); --cp-cut-s: inset(0); }
+* { text-shadow: none !important; }
+
+#global_header .logo img { content: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22%23ed2438%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2212%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2223%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M32%2023v35M32%2044%2012%2028m20%2016%2020-16%22%20fill%3D%22none%22%20stroke%3D%22%23ed2438%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E') !important; width: 48px !important; height: 48px !important; object-fit: contain; }
